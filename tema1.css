@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+/************************ Accordions ***********************/
+
 .accordion {
     background-color:#80A2FE;
     color: black;
@@ -44,6 +46,8 @@ body{
     margin-top: 48px;
 }
 
+/************************ Buttons **************************/
+
 .button {
     box-sizing: initial;
     border: none;
@@ -51,7 +55,6 @@ body{
     color: white;
     padding: 14px 28px;
     cursor: pointer;
-    width: fit-content;
 }
 
 .button.success {
@@ -83,11 +86,13 @@ body{
 }
 
 .button.default{
-    background-color: #e7e7e7;
+    background-color: #c4c4c4;
 }
 .button.default:hover{
-    background-color: #ddd;
+    background-color: rgb(175, 175, 175);
 }
+
+/************************* Columns **************************/
 
 [class*="col-"]{
     width: 100%;
@@ -113,12 +118,14 @@ body{
     }
 }
 
+/************************ Panel ****************************/
+
 .panel{
     background-color: white;
     color: black;
     border: solid rgb(160, 160, 160) 1px;
     border-radius: 2px;
-    box-shadow: 2px 2px 2px rgb(165, 165, 165);
+    box-shadow: 2px 2px 4px rgb(165, 165, 165);
     margin: 2px; 
 }
 
@@ -155,6 +162,8 @@ body{
     clear: both;
     display: table;
 }
+
+/************************ Slideshow *************************/
 
 .slideshow-container{
     max-width: 1000px;
@@ -242,6 +251,44 @@ body{
     to {opacity: 1;}
 }
 
+/************************ Tables **************************/
+.striped-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.striped-table tr, .striped-table td{
+    padding: 8px;
+}
+
+.striped-table tr:nth-child(even){
+    background-color: lightgray;
+}
+
+.striped-table tr:hover{
+    background-color: rgb(194, 194, 194);
+}
+
+
+.dark-thead{
+    background-color: #121212;
+    color: lightgray;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    text-align: left;
+}
+
+.dark-thead tr, .dark-thead th{
+    padding: 8px;
+}
+
+.striped-table .dark-thead:hover{
+    background-color: #313131;
+}
+
+
+/************************** Topnav **************************/
 .topnav{
     background-color: #0A1739;
     position: fixed;
@@ -251,7 +298,7 @@ body{
     overflow: hidden;
     width: 100%;
     margin-bottom: 32px;
-    box-shadow: 5px 5px 5px #717171;
+    box-shadow: 0 1px 3px #717171;
     z-index:1;
 }
 
