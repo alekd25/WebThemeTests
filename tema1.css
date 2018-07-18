@@ -1,4 +1,4 @@
-* {
+*{
     box-sizing: border-box;
 }
 
@@ -15,9 +15,9 @@
 }
 
 .accordion::after{
-    color: white;
-    content: '\02795';
-    font-size: 13px;  
+    content: '\002B';
+    font-size: 13px;
+    font-weight: bold;  
     float: right;
     margin-left: 5px;
 }
@@ -27,8 +27,7 @@
 }
 
 .accordion.active::after{
-    color: white;
-    content: '\2796';
+    content: '\2212';
 }
 
 .accordion-panel{
@@ -43,6 +42,51 @@ body{
     background-color: rgb(240, 240, 240);
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     margin-top: 48px;
+}
+
+.button {
+    box-sizing: initial;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.button.success {
+    background-color: #4CAF50;
+}
+.button.success:hover{
+    background-color: #46A049;
+}
+
+.button.info{
+    background-color: #2196F3;
+}
+.button.info:hover{
+    background-color: #0B7DDA;
+}
+
+.button.warning{
+    background-color: #ff9800;
+}
+.button.warning:hover{
+    background-color: #e68a00;
+}
+
+.button.danger{
+    background-color: #F44336;
+}
+.button.danger:hover{
+    background-color: #DA190B;
+}
+
+.button.default{
+    background-color: #e7e7e7;
+}
+.button.default:hover{
+    background-color: #ddd;
 }
 
 [class*="col-"]{
@@ -89,12 +133,12 @@ body{
 }
 
 .panel-header::after{
-    content: '\2795';
+    content: '\002B';
     float: right;
 }
 
 .panel-header.active::after{
-    content: '\2796';
+    content: '\2212';
 }
 
 .panel-body{
@@ -112,6 +156,92 @@ body{
     display: table;
 }
 
+.slideshow-container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slides{
+    display: none;
+}
+
+.slide-prev, .slide-next{
+    /*z-index: -2;*/
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    /*width: auto;*/
+    width: 24px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    padding: 2px;
+}
+
+.slide-next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.slide-prev:hover, .slide-next:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.caption-text{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 4px;
+    width: 100%;
+    text-align: center;
+}
+
+.number-text{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.dot{
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot-active, .dot:hover{
+    background-color: #717171;
+}
+
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade{
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
+@keyframes fade{
+    from {opacity: .4;}
+    to {opacity: 1;}
+}
+
 .topnav{
     background-color: #0A1739;
     position: fixed;
@@ -121,6 +251,8 @@ body{
     overflow: hidden;
     width: 100%;
     margin-bottom: 32px;
+    box-shadow: 5px 5px 5px #717171;
+    z-index:1;
 }
 
 .topnav a{

@@ -1,6 +1,9 @@
+var slideIndex = 1;
+
 function init(){
     initAccordions();
     initPanels();
+    showSlides(slideIndex);
 }
 
 function initAccordions(){
@@ -41,9 +44,33 @@ function initPanels(){
 
         panels[i].classList.toggle("active");
         panelBody = panels[i].nextElementSibling;
-        panelBody.style.maxHeight = "100%";
+        panelBody.style.maxHeight = panelBody.scrollHeight + "px";
         panelBody.style.padding = "5px";
     }
+}
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+    var i;
+    var slides = document.getElementsByClassName("slides");
+    var dots = document.getElementsByClassName("dot");
+    if(n > slides.length) {slideIndex = 1;}
+    if(n < 1) {slideIndex = slides.length;}
+    for(i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for(i = 0; i < dots.length; i++){
+        dots[i].className = dots[i].className.replace(" dot-active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " dot-active";
 }
 
 function topnavMenu(){
