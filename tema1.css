@@ -251,6 +251,48 @@ body{
     to {opacity: 1;}
 }
 
+/************************ Tabs ****************************/
+
+/****************** Horizontal tabs ***********************/
+.horizontal-tab{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.horizontal-tab button{
+    background-color: inherit;
+    color: black;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.horizontal-tab button:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+.hor-tablinks.tab-active {
+    background-color: #678FFE;
+    color: white;
+}
+
+.hor-tabcontent{
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
 /************************ Tables **************************/
 .striped-table{
     width: 100%;
